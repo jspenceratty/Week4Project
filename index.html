@@ -4,7 +4,8 @@
         <script>
 
             //1
-            //Use template literal function that takes in firstName and lastName and returns the string together
+            //Use template literal function that takes in firstName and lastName 
+            //and returns the string together
             function fullName(firstName, lastName) {
                 return `${firstName} ${lastName}`;
             }
@@ -14,16 +15,24 @@
             let fullNameArrow = (firstName, lastName) => `${firstName} ${lastName}`
 
             //3a
-            //Use setTimeout write anonymous arrow function in the callback parameter position; function should alert('Time is up!');
-            let timedAlert = setTimeout(() => {
+            //Use setTimeout write anonymous arrow function in the callback parameter 
+            //position; function should alert('Time is up!');
+            setTimeout(() => {
                 alert('Time is up!');
             }, 5000);
 
             //3b
-            //Arrow function named askAreWeThereYet that alert('Are we there yet?'); use setInterval pass function into callback
-            let incessantQuestion = setInterval(() => {
+            //Arrow function named askAreWeThereYet that alert('Are we there yet?'); 
+            //use setInterval pass function into callback
+            let askAreWeThereYet = () => {
                 alert('Are we there yet?');
-            }, 10000);
+            }
+
+            setInterval(askAreWeThereYet,10000);
+
+            //let incessantQuestion = setInterval(() => {
+            //    alert('Are we there yet?');
+            //}, 10000);
 
             //4a
             //Function processSplicedValue; 3 parameters (array,index,callback function)
