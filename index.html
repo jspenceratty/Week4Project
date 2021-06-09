@@ -1,0 +1,68 @@
+
+<html>
+    <head>
+        <script>
+
+            //1
+            //Use template literal function that takes in firstName and lastName and returns the string together
+            function fullName(firstName, lastName) {
+                return `${firstName} ${lastName}`;
+            }
+
+            //2
+            //Write the same function as an arrow function with different name
+            let fullNameArrow = (firstName, lastName) => `${firstName} ${lastName}`
+
+            //3a
+            //Use setTimeout write anonymous arrow function in the callback parameter position; function should alert('Time is up!');
+            let timedAlert = setTimeout(() => {
+                alert('Time is up!');
+            }, 5000);
+
+            //3b
+            //Arrow function named askAreWeThereYet that alert('Are we there yet?'); use setInterval pass function into callback
+            let incessantQuestion = setInterval(() => {
+                alert('Are we there yet?');
+            }, 10000);
+
+            //4a
+            //Function processSplicedValue; 3 parameters (array,index,callback function)
+            //Inside function use first two parameters to splice an element from the array
+            //Inside function call the callback function and pass the spliced value into it
+            //Outside function, create array of strings
+            //Call function and pass in array, index #, and console.log into it
+            let theArray = ['James','is','obviously','the','man!'];
+    
+            function processSplicedValue(array, arrayIndex, callback){
+                array.splice(arrayIndex,1)
+
+                callback(array);
+            }
+
+            processSplicedValue(theArray,2,console.log);
+            
+            //4b
+            //Call the function again, this time pass in alert method as callback
+            processSplicedValue(theArray,2,alert);
+
+            //4c
+            //Call the function again, but pass in an anonymous arrow function that alerts
+            processSplicedValue(theArray,2,function() {alert(theArray)});
+
+            //4d
+            //Call the function again, but pass in a custom function
+            //New array
+            
+            let newArray = ['James','is','obviously','the','man!'];
+
+            function addAReply(){
+                newArray.push('DUH!');
+                alert(newArray);
+            }
+            processSplicedValue(newArray,2,addAReply);
+            
+
+            
+        </script>
+    </head>
+</html>
